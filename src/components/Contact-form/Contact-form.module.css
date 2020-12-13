@@ -36,4 +36,5 @@
 button:hover {
   background-color: var(--blue-color);
   box-shadow: var(--grey-shadow);
+  color: #fff;
 }

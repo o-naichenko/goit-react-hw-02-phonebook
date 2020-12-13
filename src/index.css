@@ -1,3 +1,4 @@
+@import-normalize;
 :root {
   --blue-color: rgb(60, 144, 255);
   --grey-shadow: 0px 0px 6px 0px #7c7c7c;
