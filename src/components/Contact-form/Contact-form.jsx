@@ -18,13 +18,16 @@ class ContactForm extends Component {
     });
   }
   onSubmitHandler = e => {
-    if (e.currentTarget.name.value.length === 0) {
-      alert('Please, fill the Name');
+    e.preventDefault();
+    const { name, number } = e.currentTarget;
+    if (name.value.length === 0) {
+      alert('Please, fill name');
+    } else if (number.value.length === 0) {
+      alert('Please, fill phone number');
     } else {
-      e.preventDefault();
       const newContact = {
-        name: e.currentTarget.name.value,
-        number: e.currentTarget.number.value,
+        name: name.value,
+        number: number.value,
         id: uuidv4(),
       };
       this.setState({

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import s from './App.module.css';
 import ContactForm from './components/Contact-form';
@@ -14,6 +15,14 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
+  };
+  static propTypes = {
+    value: PropTypes.string,
+    newContact: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    }),
   };
   addContact = newContact => {
     if (this.checkContactUniqueness(newContact)) {
