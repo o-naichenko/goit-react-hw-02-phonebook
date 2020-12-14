@@ -17,6 +17,12 @@ class ContactForm extends Component {
       number: '',
     });
   }
+  onChangeHandler = e => {
+    const { name, value } = e.currentTarget;
+    this.setState({
+      [name]: value,
+    });
+  };
   onSubmitHandler = e => {
     e.preventDefault();
     const { name, number } = e.currentTarget;
@@ -37,12 +43,6 @@ class ContactForm extends Component {
       this.props.onSubmit(newContact);
       this.clearState();
     }
-  };
-  onChangeHandler = e => {
-    const { name, value } = e.currentTarget;
-    this.setState({
-      [name]: value,
-    });
   };
   render() {
     const { name, number } = this.state;
